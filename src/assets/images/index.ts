@@ -1,1 +1,5 @@
 export { ReactComponent as LoaderComp } from './loader.svg'
+export { ReactComponent as AddImgIconComp } from './add-img-icon.svg'
+export { ReactComponent as PlusIconComp } from './plus-icon.svg'
+export { ReactComponent as SearchIconComp } from './search-icon.svg'
+export { ReactComponent as StarsIconComp } from './stars-icon.svg'
