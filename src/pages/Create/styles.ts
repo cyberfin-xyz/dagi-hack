@@ -19,6 +19,21 @@ export const StyledPageInner = styled.div`
 	overflow-y: scroll;
 `
 
+export const StyledPageContent = styled.div`
+	width: 100%;
+	// height: calc(100% - 108px);
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	// overflow-y: auto;
+
+	padding-bottom: 108px;
+`
+
 export const StyledPageHeader = styled.div`
 	width: 100%;
 	height: 32px;
@@ -75,6 +90,24 @@ export const StyledAiAdviseWrapper = styled.div`
 	padding: 0 20px;
 
 	margin-top: 24px;
+	margin-bottom: 26px;
+`
+
+export const StyledButtonWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0 20px;
+
+	margin: 12px 0 40px 0;
+
+	position: fixed;
+	bottom: 0;
 `
 
 export const StyledAiAdviseItem = styled.div`
