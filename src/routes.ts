@@ -1,4 +1,5 @@
 export enum ROUTES {
-	MAIN = '', 
+	MAIN = '',
 	GO_TO_MAIN = '/',
+	CREATE = '/create',
 }

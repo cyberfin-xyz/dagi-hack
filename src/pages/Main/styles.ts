@@ -22,3 +22,18 @@ export const StyledPageInner = styled.div`
 
 	overflow-y: scroll;
 `
+
+
+export const StyledPageHeader = styled.div`
+	width: 100%;
+	height: 32px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 20px;
+
+	margin: 20px 0;
+`
