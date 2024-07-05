@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from '@styles/global'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { ROUTES } from '../routes'
-import { MainPage } from '../pages'
+import { CreatePage, MainPage } from '../pages'
 import { StyledPageWrapper } from './styles'
 import { observer } from 'mobx-react'
 import RouteWrapper from '@components/RouteWrapper';
@@ -27,6 +27,10 @@ const Main = () => {
 					<Routes>
 						<Route path={ROUTES.MAIN} element={<RouteWrapper />}>
 							<Route path={ROUTES.MAIN} element={<MainPage />} />
+						</Route>
+
+						<Route path={ROUTES.CREATE} element={<RouteWrapper />}>
+							<Route path={ROUTES.CREATE} element={<CreatePage />} />
 						</Route>
 
 						<Route path='*' element={<Navigate to={ROUTES.MAIN} replace />} />
