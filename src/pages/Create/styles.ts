@@ -52,9 +52,11 @@ export const StyledFormWrapper = styled.div`
 	height: fit-content;
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
+
+	gap: 12px;
 
 	padding: 0 20px;
 

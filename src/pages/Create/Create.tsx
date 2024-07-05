@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
 import { StyledAiAdviseItem, StyledAiAdviseWrapper, StyledFormWrapper, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
+import TextInput from '@components/TextInput';
 
 
 const Create = () => {
 	const { MainStore } = StoreContext();
 
 	const navigate = useNavigate();
+
+	const [formState, setFormState] = useState({
+		name: '',
+		ticker: '',
+		description: '',
+	});
+
+	const handleChange = (field: string, value: string) => {
+		setFormState((prevState: any) => ({
+			...prevState,
+			[field]: value,
+		}));
+	};
+
+	console.log(formState);
+
 
 	return (
 		<>
@@ -28,7 +45,22 @@ const Create = () => {
 				</StyledSelectImgWrapper>
 
 				<StyledFormWrapper>
-
+					<TextInput
+						value={formState.name}
+						onChange={(value: string) => handleChange('name', value)}
+						placeholder={'Name'}
+						withFocus
+					/>
+					<TextInput
+						value={formState.ticker}
+						onChange={(value: string) => handleChange('ticker', value)}
+						placeholder={'Ticker'}
+					/>
+					<TextInput
+						value={formState.description}
+						onChange={(value: string) => handleChange('description', value)}
+						placeholder={'Description'}
+					/>
 				</StyledFormWrapper>
 
 				<StyledAiAdviseWrapper>
