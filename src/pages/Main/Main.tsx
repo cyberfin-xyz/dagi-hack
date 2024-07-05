@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
-import { StyledFilterItem, StyledFiltersInner, StyledFiltersWrapper, StyledPageHeader, StyledPageInner, StyledSearchWrapper } from './styles';
+import { StyledFilterItem, StyledFiltersInner, StyledFiltersWrapper, StyledPageHeader, StyledPageInner, StyledRecentCreateItem, StyledRecentCreateWrapper, StyledSearchWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
@@ -57,6 +57,12 @@ const Main = () => {
 						})}
 					</StyledFiltersInner>
 				</StyledFiltersWrapper>
+
+				<StyledRecentCreateWrapper>
+					<StyledRecentCreateItem>
+
+					</StyledRecentCreateItem>
+				</StyledRecentCreateWrapper>
 
 
 			</StyledPageInner>

@@ -74,6 +74,33 @@ export const StyledFiltersWrapper = styled.div`
     }
 `
 
+export const StyledRecentCreateWrapper = styled.div`
+	width: 100%;
+	height: 64px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0 20px;
+
+	margin-top: 24px;
+`
+
+export const StyledRecentCreateItem = styled.div`
+	width: 100%;
+	height: 64px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 16px;
+	background: rgba(242, 242, 242, 0.10);
+`
+
 export const StyledFiltersInner = styled.div`
 	width: fit-content;
 	height: 36px;
