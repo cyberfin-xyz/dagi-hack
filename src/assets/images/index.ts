@@ -1,0 +1,1 @@
+export { ReactComponent as LoaderComp } from './loader.svg'
