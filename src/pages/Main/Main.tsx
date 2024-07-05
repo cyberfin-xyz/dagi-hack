@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
 import { StyledFilterItem, StyledFiltersInner, StyledFiltersWrapper, StyledPageHeader, StyledPageInner, StyledRecentCreateItem, StyledRecentCreateWrapper, StyledSearchWrapper } from './styles';
@@ -7,11 +7,35 @@ import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
 import { PlusIconComp } from '@assets/images';
 import { ROUTES } from '../../routes';
+import useDebounce from '@utils/useDebounce';
+import SearchField from '@components/SearchField';
 
 const Main = () => {
 	const { MainStore } = StoreContext();
 
 	const navigate = useNavigate();
+
+	const [searchText, setSearchText] = useState('');
+	const debouncedSearchText = useDebounce(searchText, 300);
+	const [requestState, setRequestState] = useState('');
+	const handleSearchChange = (value: string) => setSearchText(value);
+
+	useEffect(() => {
+		const makeRequest = async () => {
+			if (debouncedSearchText) {
+				//TODO АРІ call
+				setRequestState(`Searching for ${debouncedSearchText}...`);
+				setTimeout(() => {
+					setRequestState(`Results for ${debouncedSearchText}`);
+				}, 1000);
+			} else {
+				setRequestState('');
+			}
+		};
+
+		makeRequest();
+	}, [debouncedSearchText]);
+
 
 	return (
 		<>
@@ -36,9 +60,16 @@ const Main = () => {
 				</StyledPageHeader>
 
 				<StyledSearchWrapper>
-					<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px' }}>
+					{/* <Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px' }}>
 						Search tokens
-					</Paragraph>
+					</Paragraph> */}
+
+					<SearchField
+						value={searchText}
+						onChange={handleSearchChange}
+						placeholder={'Search tokens'}
+						withFocus
+					/>
 				</StyledSearchWrapper>
 
 				<StyledFiltersWrapper>
