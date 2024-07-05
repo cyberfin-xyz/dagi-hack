@@ -21,6 +21,10 @@ const Create = () => {
 		name: '',
 		ticker: '',
 		description: '',
+		tgChannel: '',
+		tgChat: '',
+		twitter: '',
+		website: '',
 	});
 
 	const handleChange = (field: string, value: string) => {
@@ -93,20 +97,25 @@ const Create = () => {
 
 								<StyledFormWrapper>
 									<TextInput
-										value={formState.name}
-										onChange={(value: string) => handleChange('name', value)}
-										placeholder={'Name'}
+										value={formState.tgChannel}
+										onChange={(value: string) => handleChange('tgChannel', value)}
+										placeholder={'Telegram channel'}
 										withFocus
 									/>
 									<TextInput
-										value={formState.ticker}
-										onChange={(value: string) => handleChange('ticker', value)}
-										placeholder={'Ticker'}
+										value={formState.tgChat}
+										onChange={(value: string) => handleChange('tgChat', value)}
+										placeholder={'Telegram chat'}
 									/>
 									<TextInput
-										value={formState.description}
-										onChange={(value: string) => handleChange('description', value)}
-										placeholder={'Description'}
+										value={formState.twitter}
+										onChange={(value: string) => handleChange('twitter', value)}
+										placeholder={'Twitter'}
+									/>
+									<TextInput
+										value={formState.website}
+										onChange={(value: string) => handleChange('website', value)}
+										placeholder={'Website'}
 									/>
 								</StyledFormWrapper>
 
