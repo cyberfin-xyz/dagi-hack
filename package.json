@@ -1,0 +1,45 @@
+{
+  "name": "dagi-hack",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.60",
+    "@types/react-dom": "^18.2.19",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.1",
+    "styled-components": "^6.1.8",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "start": "set PORT=3333 && craco start --openssl-legacy-provider start",
+    "build": "craco build --openssl-legacy-provider build",
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not ie <= 99",
+      "not android <= 4.4.4",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "gh-pages": "^6.1.1"
+  }
+}
