@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
-import { StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper } from './styles';
+import { StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
@@ -9,6 +9,20 @@ import TextInput from '@components/TextInput';
 import Button from '@components/Button';
 import { MainButtonStyle } from '@components/Button/Button';
 
+interface FormState {
+	name: string;
+	ticker: string;
+	description: string;
+	tgChannel: string;
+	tgChat: string;
+	twitter: string;
+	website: string;
+}
+
+interface SocialDesc {
+	title: string;
+	paramKey: keyof FormState;
+}
 
 const Create = () => {
 	const { MainStore } = StoreContext();
@@ -17,7 +31,7 @@ const Create = () => {
 
 	const [currentStep, setCurrentStep] = useState<'basicInfo' | 'socialLinks' | 'finalReview' | 'end'>('basicInfo');
 
-	const [formState, setFormState] = useState({
+	const [formState, setFormState] = useState<FormState>({
 		name: '',
 		ticker: '',
 		description: '',
@@ -26,6 +40,25 @@ const Create = () => {
 		twitter: '',
 		website: '',
 	});
+
+	const finalSocialDescData: SocialDesc[] = [
+		{
+			title: 'Telegram channel',
+			paramKey: 'tgChannel'
+		},
+		{
+			title: 'Telegram chat',
+			paramKey: 'tgChat'
+		},
+		{
+			title: 'Twitter',
+			paramKey: 'twitter'
+		},
+		{
+			title: 'Website',
+			paramKey: 'website'
+		},
+	]
 
 	const handleChange = (field: string, value: string) => {
 		setFormState((prevState: any) => ({
@@ -43,7 +76,6 @@ const Create = () => {
 	return (
 		<>
 			<StyledPageInner>
-
 				<StyledPageContent>
 					{
 						currentStep === 'basicInfo' ? <>
@@ -124,7 +156,42 @@ const Create = () => {
 
 									</StyledAiAdviseItem>
 								</StyledAiAdviseWrapper>
-							</> : ''
+							</>
+								: currentStep === 'finalReview' ? <>
+									<StyledTokenPreviewWrapper>
+										<StyledTokenPreview>
+
+											<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'24px'} lineHeight={'32px'} customStyle={{ letterSpacing: '-0.48px', fontVariantNumeric: 'lining-nums proportional-nums' }}>
+												{`${formState?.name} • ${formState?.ticker}`}
+											</Paragraph>
+
+											<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-Medium'} fontSize={'16px'} lineHeight={'20px'} customStyle={{}}>
+												{formState?.description}
+											</Paragraph>
+
+										</StyledTokenPreview>
+									</StyledTokenPreviewWrapper>
+
+									<StyledDetailsWrapper>
+										{
+											finalSocialDescData.map((socialItem: SocialDesc) => (
+												formState?.[socialItem?.paramKey]
+													? <StyledDetailWrapper>
+														<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-Medium'} fontSize={'16px'} lineHeight={'20px'} customStyle={{}}>
+															{socialItem?.title}
+														</Paragraph>
+
+														<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-Medium'} fontSize={'16px'} lineHeight={'20px'} customStyle={{}}>
+															{formState?.[socialItem?.paramKey]}
+														</Paragraph>
+													</StyledDetailWrapper>
+													: ''
+											))
+										}
+
+									</StyledDetailsWrapper>
+								</>
+									: ''
 					}
 				</StyledPageContent>
 

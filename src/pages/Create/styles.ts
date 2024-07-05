@@ -62,6 +62,62 @@ export const StyledSelectImgWrapper = styled.div`
 	margin-bottom: 20px;
 `
 
+export const StyledTokenPreviewWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0 20px;
+
+	margin-top: 64px;
+	margin-bottom: 32px;
+`
+
+export const StyledDetailsWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	padding: 0 20px;
+
+	gap: 12px;
+`
+
+export const StyledDetailWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+`
+
+export const StyledTokenPreview = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	padding: 32px 16px;
+
+	border-radius: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.10);
+	background: linear-gradient(293deg, rgba(255, 255, 255, 0.00) 10.22%, rgba(255, 255, 255, 0.07) 48.56%, rgba(255, 255, 255, 0.00) 89.81%), #171717;
+	box-shadow: 0px 612px 171px 0px rgba(0, 0, 0, 0.00), 0px 392px 157px 0px rgba(0, 0, 0, 0.02), 0px 220px 132px 0px rgba(0, 0, 0, 0.08), 0px 98px 98px 0px rgba(0, 0, 0, 0.13), 0px 24px 54px 0px rgba(0, 0, 0, 0.15);
+`
+
 export const StyledFormWrapper = styled.div`
 	width: 100%;
 	height: fit-content;
