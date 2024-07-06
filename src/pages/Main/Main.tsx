@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
-import { StyledFilterItem, StyledFiltersInner, StyledFiltersWrapper, StyledPageHeader, StyledPageInner, StyledRecentCreateItem, StyledRecentCreateWrapper, StyledSearchWrapper } from './styles';
+import { StyledDivider, StyledFilterItem, StyledFiltersInner, StyledFiltersWrapper, StyledPageHeader, StyledPageInner, StyledRecentCreateItem, StyledRecentCreateWrapper, StyledSearchWrapper, StyledTokenDescription, StyledTokenIcon, StyledTokensListWrapper, StyledTokenWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
-import { PlusIconComp } from '@assets/images';
+import { blakMonkeTokenIcon, bobbyTokenIcon, jacqueFrescoTokenIcon, miniTokenIcon, PlusIconComp, swappyTokenIcon } from '@assets/images';
 import { ROUTES } from '../../routes';
 import useDebounce from '@utils/useDebounce';
 import SearchField from '@components/SearchField';
@@ -35,6 +35,69 @@ const Main = () => {
 
 		makeRequest();
 	}, [debouncedSearchText]);
+
+	const tokenList = [
+		{
+			name: 'Swappy',
+			ticker: 'SWAP',
+			description: 'Swappy is on Base now',
+			tgChannel: '',
+			tgChat: '',
+			twitter: '',
+			website: '',
+			icon: swappyTokenIcon,
+			cratedBy: 'swappydev',
+			mc: 3899.33
+		},
+		{
+			name: 'Bobby',
+			ticker: 'BOBBY',
+			description: 'So tiny, but yet so cute',
+			tgChannel: '',
+			tgChat: '',
+			twitter: '',
+			website: '',
+			icon: bobbyTokenIcon,
+			cratedBy: 'bobbydev',
+			mc: 31098
+		},
+		{
+			name: 'mini',
+			ticker: 'mini',
+			description: 'miniest meme in the memecoin',
+			tgChannel: '',
+			tgChat: '',
+			twitter: '',
+			website: '',
+			icon: miniTokenIcon,
+			cratedBy: 'homyak999999',
+			mc: 80511.48
+		},
+		{
+			name: 'BLAK MONKE',
+			ticker: 'BMLM',
+			description: 'BLAK MONKE LIVES MATTER U KNOW?',
+			tgChannel: '',
+			tgChat: '',
+			twitter: '',
+			website: '',
+			icon: blakMonkeTokenIcon,
+			cratedBy: 'whitebosston',
+			mc: 3934.55
+		},
+		{
+			name: 'Jacque Fresco',
+			ticker: 'JAC',
+			description: 'Jacque Fresco will make you feel cool.',
+			tgChannel: '',
+			tgChat: '',
+			twitter: '',
+			website: '',
+			icon: jacqueFrescoTokenIcon,
+			cratedBy: 'serinedev',
+			mc: 13277.3
+		},
+	]
 
 
 	return (
@@ -96,6 +159,36 @@ const Main = () => {
 				</StyledRecentCreateWrapper>
 
 
+				<StyledTokensListWrapper>
+					{tokenList.map((tokenData: any, index: number) => {
+
+						return <>
+							<StyledTokenWrapper>
+								<StyledTokenIcon src={tokenData?.icon} />
+
+								<StyledTokenDescription>
+									<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-Medium'} fontSize={'16px'} lineHeight={'20px'} customStyle={{}}>
+										{`${tokenData?.name} • ${tokenData?.ticker}`}
+									</Paragraph>
+
+									<Paragraph color={'rgba(218, 255, 0, 0.5)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'16px'} customStyle={{}}>
+										Market cap: ${tokenData?.mc || 0}
+									</Paragraph>
+
+									<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'16px'} customStyle={{}}>
+										{tokenData?.description}
+									</Paragraph>
+
+									<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'16px'} customStyle={{}}>
+										Created by: @{tokenData?.cratedBy}
+									</Paragraph>
+								</StyledTokenDescription>
+							</StyledTokenWrapper>
+
+							{tokenList.length > index ? <StyledDivider /> : ''}
+						</>
+					})}
+				</StyledTokensListWrapper>
 			</StyledPageInner>
 		</>
 	)

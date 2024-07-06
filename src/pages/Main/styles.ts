@@ -74,6 +74,54 @@ export const StyledFiltersWrapper = styled.div`
     }
 `
 
+export const StyledTokensListWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	padding: 0 20px;
+
+	margin-top: 20px;
+
+	gap: 16px;
+`
+
+export const StyledTokenIcon = styled.img`
+	width: 64px;
+	height: 64px;
+
+	border-radius: 18.286px;
+	border: 1.143px solid rgba(255, 255, 255, 0.03);
+`
+
+export const StyledTokenWrapper = styled.div`
+	width: 100%;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+
+	gap: 12px;
+`
+
+export const StyledTokenDescription = styled.div`
+	width: calc(100% - 76px);
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	gap: 4px;
+`
+
 export const StyledRecentCreateWrapper = styled.div`
 	width: 100%;
 	height: 64px;
@@ -126,4 +174,11 @@ export const StyledFilterItem = styled(Paragraph)`
 
 	border-radius: 8px;
 	background: rgba(242, 242, 242, 0.10);
+`
+
+export const StyledDivider = styled.div`
+	width: 100%;
+	height: 1px;
+
+	background: rgba(242, 242, 242, 0.1);
 `
