@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
-import { StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
+import { StyledAiAdviseHeader, StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
@@ -9,6 +9,8 @@ import TextInput from '@components/TextInput';
 import Button from '@components/Button';
 import { MainButtonStyle } from '@components/Button/Button';
 import PhotoUploadInput from '@components/PhotoUploadInput';
+import { ROUTES } from '../../routes';
+import { StarsIconComp } from '@assets/images';
 
 interface FormState {
 	name: string;
@@ -71,7 +73,15 @@ const Create = () => {
 	};
 
 	const handleNextStep = () => {
-		setCurrentStep((prevStep: any) => (prevStep === 'basicInfo') ? 'socialLinks' : (prevStep === 'socialLinks' ? 'finalReview' : 'end'))
+		if (currentStep === 'finalReview') {
+			handleCreate()
+		} else {
+			setCurrentStep((prevStep: any) => (prevStep === 'basicInfo') ? 'socialLinks' : (prevStep === 'socialLinks' ? 'finalReview' : 'end'))
+		}
+	};
+
+	const handleCreate = () => {
+		navigate(`${ROUTES.GO_TO_MAIN}`)
 	};
 
 	console.log(formState);
@@ -120,6 +130,35 @@ const Create = () => {
 
 							<StyledAiAdviseWrapper>
 								<StyledAiAdviseItem>
+									<StyledAiAdviseHeader>
+										<Paragraph
+											color={'#DAFF00'}
+											fontFamily={'WorkSans'}
+											fontSize={'14px'}
+											lineHeight={'20px'}
+											customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
+										>
+											<StarsIconComp style={{ marginRight: '4px' }} />
+
+											AI Advisor
+										</Paragraph>
+
+										<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>
+											•
+										</Paragraph>
+
+										<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>
+											Based on experience
+										</Paragraph>
+
+									</StyledAiAdviseHeader>
+
+
+									<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>
+										Memorable and Fun:<br />
+										The name should be catchy and easy to remember. Example: MoonCoin, #MOON
+									</Paragraph>
+
 
 								</StyledAiAdviseItem>
 							</StyledAiAdviseWrapper>
@@ -161,6 +200,35 @@ const Create = () => {
 
 								<StyledAiAdviseWrapper>
 									<StyledAiAdviseItem>
+										<StyledAiAdviseHeader>
+											<Paragraph
+												color={'#DAFF00'}
+												fontFamily={'WorkSans'}
+												fontSize={'14px'}
+												lineHeight={'20px'}
+												customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
+											>
+												<StarsIconComp style={{ marginRight: '4px' }} />
+
+												AI Advisor
+											</Paragraph>
+
+											<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>
+												•
+											</Paragraph>
+
+											<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>
+												Based on experience
+											</Paragraph>
+
+										</StyledAiAdviseHeader>
+
+
+										<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>
+											Memorable and Fun:<br />
+											The name should be catchy and easy to remember. Example: MoonCoin, #MOON
+										</Paragraph>
+
 
 									</StyledAiAdviseItem>
 								</StyledAiAdviseWrapper>

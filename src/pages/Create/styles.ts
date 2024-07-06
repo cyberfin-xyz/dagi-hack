@@ -168,13 +168,26 @@ export const StyledButtonWrapper = styled.div`
 
 export const StyledAiAdviseItem = styled.div`
 	width: 100%;
-	height: 124px;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	border-radius: 16px;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.07) 120.68%), rgba(255, 255, 255, 0.03);
+
+	padding: 16px;
+	gap: 10px;
+`
+
+export const StyledAiAdviseHeader = styled.div`
+	width: 100%;
+	height: fit-content;
 
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-
-	border-radius: 16px;
-	background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.07) 120.68%), rgba(255, 255, 255, 0.03);
+	justify-content: flex-start;
 `
