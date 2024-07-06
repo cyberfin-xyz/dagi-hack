@@ -50,10 +50,10 @@ export const StyledPageHeader = styled.div`
 
 export const StyledSelectImgWrapper = styled.div`
 	width: 100%;
-	height: 256px;
+	height: fit-content;
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 

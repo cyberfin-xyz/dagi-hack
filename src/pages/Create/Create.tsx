@@ -8,6 +8,7 @@ import Paragraph from '@components/Paragraph';
 import TextInput from '@components/TextInput';
 import Button from '@components/Button';
 import { MainButtonStyle } from '@components/Button/Button';
+import PhotoUploadInput from '@components/PhotoUploadInput';
 
 interface FormState {
 	name: string;
@@ -17,6 +18,7 @@ interface FormState {
 	tgChat: string;
 	twitter: string;
 	website: string;
+	tokenImg: string | null;
 }
 
 interface SocialDesc {
@@ -39,6 +41,7 @@ const Create = () => {
 		tgChat: '',
 		twitter: '',
 		website: '',
+		tokenImg: ''
 	});
 
 	const finalSocialDescData: SocialDesc[] = [
@@ -60,8 +63,8 @@ const Create = () => {
 		},
 	]
 
-	const handleChange = (field: string, value: string) => {
-		setFormState((prevState: any) => ({
+	const handleChange = (field: string, value: string | null) => {
+		setFormState((prevState) => ({
 			...prevState,
 			[field]: value,
 		}));
@@ -86,7 +89,12 @@ const Create = () => {
 							</StyledPageHeader>
 
 							<StyledSelectImgWrapper>
-								<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px' }}>
+								<PhotoUploadInput
+									selectedImage={formState.tokenImg}
+									onChangeImage={(value: string | null) => handleChange('tokenImg', value)}
+								/>
+
+								<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px' }}>
 									Select an image for the token
 								</Paragraph>
 							</StyledSelectImgWrapper>
@@ -160,6 +168,12 @@ const Create = () => {
 								: currentStep === 'finalReview' ? <>
 									<StyledTokenPreviewWrapper>
 										<StyledTokenPreview>
+
+											<PhotoUploadInput
+												selectedImage={formState.tokenImg}
+												onChangeImage={(value: string | null) => { }}
+												disabled={true}
+											/>
 
 											<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'24px'} lineHeight={'32px'} customStyle={{ letterSpacing: '-0.48px', fontVariantNumeric: 'lining-nums proportional-nums' }}>
 												{`${formState?.name} • ${formState?.ticker}`}
