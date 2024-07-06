@@ -118,6 +118,13 @@ export const StyledTokenPreview = styled.div`
 	box-shadow: 0px 612px 171px 0px rgba(0, 0, 0, 0.00), 0px 392px 157px 0px rgba(0, 0, 0, 0.02), 0px 220px 132px 0px rgba(0, 0, 0, 0.08), 0px 98px 98px 0px rgba(0, 0, 0, 0.13), 0px 24px 54px 0px rgba(0, 0, 0, 0.15);
 `
 
+export const StyledTokenIcon = styled.img`
+	width: 100px;
+	height: 100px;
+
+	border-radius: 62px;
+`
+
 export const StyledFormWrapper = styled.div`
 	width: 100%;
 	height: fit-content;

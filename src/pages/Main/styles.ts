@@ -50,6 +50,7 @@ export const StyledSearchWrapper = styled.div`
 export const StyledFiltersWrapper = styled.div`
 	width: 100%;
 	height: 36px;
+	min-height: 36px;
 
 	display: flex;
 	flex-direction: row;

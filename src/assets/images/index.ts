@@ -11,3 +11,4 @@ export { default as miniTokenIcon } from './mini-token.png'
 export { default as swappyTokenIcon } from './swappy-token.png'
 
 export { default as userAvatarMock } from './user-avatar-mock.png'
+export { default as moonTokenIcon } from './moon-token.png'

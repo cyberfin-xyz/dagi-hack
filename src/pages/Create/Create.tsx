@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
-import { StyledAiAdviseHeader, StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
+import { StyledAiAdviseHeader, StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenIcon, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
@@ -10,7 +10,7 @@ import Button from '@components/Button';
 import { MainButtonStyle } from '@components/Button/Button';
 import PhotoUploadInput from '@components/PhotoUploadInput';
 import { ROUTES } from '../../routes';
-import { StarsIconComp } from '@assets/images';
+import { moonTokenIcon, StarsIconComp } from '@assets/images';
 
 interface FormState {
 	name: string;
@@ -84,7 +84,27 @@ const Create = () => {
 		navigate(`${ROUTES.GO_TO_MAIN}`)
 	};
 
-	console.log(formState);
+	const backButtonHandler = () => {
+		if (currentStep === 'basicInfo') {
+			navigate(ROUTES.GO_TO_MAIN);
+		} else {
+			setCurrentStep((prevStep: any) => (prevStep === 'basicInfo') ? 'socialLinks' : (prevStep === 'socialLinks' ? 'basicInfo' : 'basicInfo'))
+		}
+
+		window?.Telegram?.WebApp?.BackButton?.hide();
+	};
+
+	useEffect(() => {
+		if (window?.Telegram?.WebApp) {
+			window?.Telegram?.WebApp?.BackButton?.show();
+			window?.Telegram?.WebApp?.BackButton?.onClick(backButtonHandler);
+		}
+
+		return () => {
+			window?.Telegram?.WebApp?.BackButton?.hide();
+			window?.Telegram?.WebApp?.BackButton?.offClick(backButtonHandler);
+		};
+	}, [currentStep]);
 
 	return (
 		<>
@@ -99,12 +119,14 @@ const Create = () => {
 							</StyledPageHeader>
 
 							<StyledSelectImgWrapper>
-								<PhotoUploadInput
+								<StyledTokenIcon src={moonTokenIcon} />
+
+								{/* <PhotoUploadInput
 									selectedImage={formState.tokenImg}
 									onChangeImage={(value: string | null) => handleChange('tokenImg', value)}
-								/>
+								/> */}
 
-								<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px' }}>
+								<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.48px', marginTop: '8px' }}>
 									Select an image for the token
 								</Paragraph>
 							</StyledSelectImgWrapper>
@@ -237,11 +259,12 @@ const Create = () => {
 									<StyledTokenPreviewWrapper>
 										<StyledTokenPreview>
 
-											<PhotoUploadInput
+											<StyledTokenIcon src={moonTokenIcon} />
+											{/* <PhotoUploadInput
 												selectedImage={formState.tokenImg}
 												onChangeImage={(value: string | null) => { }}
 												disabled={true}
-											/>
+											/> */}
 
 											<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-SemiBold'} fontSize={'24px'} lineHeight={'32px'} customStyle={{ letterSpacing: '-0.48px', fontVariantNumeric: 'lining-nums proportional-nums' }}>
 												{`${formState?.name} • ${formState?.ticker}`}
