@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/dagi-hack/static/css/main.1d2f8ebe.chunk.css",
-    "main.js": "/dagi-hack/static/js/main.e3dd1524.chunk.js",
+    "main.js": "/dagi-hack/static/js/main.49b842b7.chunk.js",
     "runtime~main.js": "/dagi-hack/static/js/runtime~main.8720d6ed.js",
-    "static/js/2.c0574cb9.chunk.js": "/dagi-hack/static/js/2.c0574cb9.chunk.js",
+    "static/js/2.62c8c8f0.chunk.js": "/dagi-hack/static/js/2.62c8c8f0.chunk.js",
     "index.html": "/dagi-hack/index.html",
-    "precache-manifest.ec05cb65485d07d4f0b46fda31ad5431.js": "/dagi-hack/precache-manifest.ec05cb65485d07d4f0b46fda31ad5431.js",
+    "precache-manifest.24aef90801f300e2af3b4cc8f58177b7.js": "/dagi-hack/precache-manifest.24aef90801f300e2af3b4cc8f58177b7.js",
     "service-worker.js": "/dagi-hack/service-worker.js",
     "static/media/font-face.css": "/dagi-hack/static/media/WorkSans-SemiBold.c1b2dde1.ttf",
     "static/media/add-img-icon.07f66a81.svg": "/dagi-hack/static/media/add-img-icon.07f66a81.svg",
     "static/media/bobby-token.png": "/dagi-hack/static/media/bobby-token.17363a0b.png",
     "static/media/loader.2ffef1e8.svg": "/dagi-hack/static/media/loader.2ffef1e8.svg",
+    "static/media/moon-token.png": "/dagi-hack/static/media/moon-token.bed3d5f8.png",
     "static/media/plus-icon.6f30807e.svg": "/dagi-hack/static/media/plus-icon.6f30807e.svg",
     "static/media/search-icon.65f1690f.svg": "/dagi-hack/static/media/search-icon.65f1690f.svg",
     "static/media/stars-icon.acd98293.svg": "/dagi-hack/static/media/stars-icon.acd98293.svg"

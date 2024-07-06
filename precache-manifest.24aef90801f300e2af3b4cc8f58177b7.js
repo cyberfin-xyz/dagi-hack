@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5cba233abb779b25c0ab682bf8a01661",
+    "revision": "b385fab5bfa45bbb9c2e8c71a6a13bfc",
     "url": "/dagi-hack/index.html"
   },
   {
-    "revision": "c17e52c04933d85f1f56",
+    "revision": "590be573c9fad2c40eb4",
     "url": "/dagi-hack/static/css/main.1d2f8ebe.chunk.css"
   },
   {
-    "revision": "599d5fedda4ce1dacf9d",
-    "url": "/dagi-hack/static/js/2.c0574cb9.chunk.js"
+    "revision": "de7ca05b5dea3ee3437f",
+    "url": "/dagi-hack/static/js/2.62c8c8f0.chunk.js"
   },
   {
-    "revision": "c17e52c04933d85f1f56",
-    "url": "/dagi-hack/static/js/main.e3dd1524.chunk.js"
+    "revision": "590be573c9fad2c40eb4",
+    "url": "/dagi-hack/static/js/main.49b842b7.chunk.js"
   },
   {
     "revision": "0a7cebbe6de5c1ec4bda",
@@ -46,6 +46,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2ffef1e82a03fde7d657526f0b57aca1",
     "url": "/dagi-hack/static/media/loader.2ffef1e8.svg"
+  },
+  {
+    "revision": "bed3d5f81b49b9415006e2fa42683c38",
+    "url": "/dagi-hack/static/media/moon-token.bed3d5f8.png"
   },
   {
     "revision": "6f30807eab05c85239e6dc62f34bd8bf",
