@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fedb261a.chunk.css",
+    "main.js": "/static/js/main.e3dd1524.chunk.js",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "static/js/2.d5d77e35.chunk.js": "/static/js/2.d5d77e35.chunk.js",
+    "index.html": "/index.html",
+    "precache-manifest.b18add84950ed6e518107428584bdfc8.js": "/precache-manifest.b18add84950ed6e518107428584bdfc8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/font-face.css": "/static/media/WorkSans-SemiBold.c1b2dde1.ttf",
+    "static/media/add-img-icon.07f66a81.svg": "/static/media/add-img-icon.07f66a81.svg",
+    "static/media/bobby-token.png": "/static/media/bobby-token.17363a0b.png",
+    "static/media/loader.2ffef1e8.svg": "/static/media/loader.2ffef1e8.svg",
+    "static/media/plus-icon.6f30807e.svg": "/static/media/plus-icon.6f30807e.svg",
+    "static/media/search-icon.65f1690f.svg": "/static/media/search-icon.65f1690f.svg",
+    "static/media/stars-icon.acd98293.svg": "/static/media/stars-icon.acd98293.svg"
+  }
+}
