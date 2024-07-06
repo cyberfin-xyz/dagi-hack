@@ -1,4 +1,5 @@
 {
+  "homepage": "https://cyberfin-xyz.github.io/dagi-hack",
   "name": "dagi-hack",
   "version": "0.2.0",
   "private": true,
@@ -18,7 +19,9 @@
   },
   "scripts": {
     "start": "set PORT=3333 && craco start --openssl-legacy-provider start",
-    "build": "craco build --openssl-legacy-provider build"
+    "build": "craco build --openssl-legacy-provider build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
