@@ -5,7 +5,7 @@ import { StyledDivider, StyledFilterItem, StyledFiltersInner, StyledFiltersWrapp
 
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
-import { blakMonkeTokenIcon, bobbyTokenIcon, jacqueFrescoTokenIcon, miniTokenIcon, PlusIconComp, swappyTokenIcon } from '@assets/images';
+import { blakMonkeTokenIcon, bobbyTokenIcon, jacqueFrescoTokenIcon, miniTokenIcon, PlusIconComp, swappyTokenIcon, userAvatarMock } from '@assets/images';
 import { ROUTES } from '../../routes';
 import useDebounce from '@utils/useDebounce';
 import SearchField from '@components/SearchField';
@@ -154,7 +154,29 @@ const Main = () => {
 
 				<StyledRecentCreateWrapper>
 					<StyledRecentCreateItem>
+						<StyledTokenIcon src={userAvatarMock} style={{
+							width: '56px',
+							height: '56px',
+							borderRadius: '12px'
+						}} />
 
+						<StyledTokenDescription>
+							<Paragraph color={'#F2F2F2'} fontFamily={'WorkSans-Medium'} fontSize={'16px'} lineHeight={'20px'} customStyle={{}}>
+								@Barov1k
+							</Paragraph>
+
+							<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'16px'} customStyle={{}}>
+								Sold 0.38 ETH of SWAPPY
+							</Paragraph>
+
+							<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'16px'} customStyle={{
+								position: 'absolute',
+								top: '14px',
+								right: '12px'
+							}}>
+								4s ago
+							</Paragraph>
+						</StyledTokenDescription>
 					</StyledRecentCreateItem>
 				</StyledRecentCreateWrapper>
 

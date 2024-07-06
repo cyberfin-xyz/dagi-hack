@@ -9,3 +9,5 @@ export { default as blakMonkeTokenIcon } from './blak-monke-token.png'
 export { default as bobbyTokenIcon } from './bobby-token.png'
 export { default as miniTokenIcon } from './mini-token.png'
 export { default as swappyTokenIcon } from './swappy-token.png'
+
+export { default as userAvatarMock } from './user-avatar-mock.png'

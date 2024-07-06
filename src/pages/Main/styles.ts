@@ -147,6 +147,12 @@ export const StyledRecentCreateItem = styled.div`
 
 	border-radius: 16px;
 	background: rgba(242, 242, 242, 0.10);
+
+	padding: 4px 12px 4px 4px;
+
+	gap: 8px;
+
+	position: relative;
 `
 
 export const StyledFiltersInner = styled.div`
