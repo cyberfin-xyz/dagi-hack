@@ -101,21 +101,22 @@ const Create = () => {
 			...prevState,
 			[field]: value,
 		}));
-			const ai = await fetch("https://europe-west1-aiplatform.googleapis.com/v1/projects/722514934845/locations/europe-west1/endpoints/1973812487857897472:predict", {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'Authorization': 'Bearer '
-				},
-				body: JSON.stringify({"instances": [{"name": formState.name, "ticker": formState.ticker, "description": formState.description}]})
-			});
-			const resp = await ai.json();
-			console.log(resp);
-			const scores = resp["predictions"][0]["scores"]
-			let prediction = false
-			if (resp["predictions"][0]["classes"][indexOfMax(scores)] == "True") {
-				prediction = true
-			}
+		const tokenData = JSON.stringify({"instances": [{"name": formState.name, "ticker": formState.ticker, "description": formState.description}]})
+		const ai = await fetch("https://europe-west1-aiplatform.googleapis.com/v1/projects/722514934845/locations/europe-west1/endpoints/1973812487857897472:predict", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': 'Bearer '
+			},
+			body: tokenData
+		});
+		const resp = await ai.json();
+		console.log(resp);
+		const scores = resp["predictions"][0]["scores"]
+		let prediction = false
+		if (resp["predictions"][0]["classes"][indexOfMax(scores)] == "True") {
+			prediction = true
+		}
 
 		let prompt;
 		if (prediction) {
