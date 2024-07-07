@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import StoreContext from '@store/RootStore'
 import { StyledAiAdviseHeader, StyledAiAdviseItem, StyledAiAdviseWrapper, StyledButtonWrapper, StyledDetailsWrapper, StyledDetailWrapper, StyledFormWrapper, StyledPageContent, StyledPageHeader, StyledPageInner, StyledSelectImgWrapper, StyledTokenIcon, StyledTokenPreview, StyledTokenPreviewWrapper } from './styles';
 
+import Anthropic from "@anthropic-ai/sdk";
 import { useNavigate } from 'react-router-dom';
 import Paragraph from '@components/Paragraph';
 import TextInput from '@components/TextInput';
@@ -32,7 +33,7 @@ interface SocialDesc {
 	paramKey: keyof FormState;
 }
 
-function indexOfMax(arr) {
+function indexOfMax(arr: any) {
 	if (arr.length === 0) {
 		return -1;
 	}
@@ -49,6 +50,10 @@ function indexOfMax(arr) {
 
 	return maxIndex;
 }
+
+const anthropic = new Anthropic({
+	apiKey: ''
+})
 
 const Create = () => {
 	const { MainStore } = StoreContext();
@@ -112,7 +117,31 @@ const Create = () => {
 				prediction = true
 			}
 
+		let prompt;
+		if (prediction) {
+			prompt = "{ mlPrediction: True }. Give 2-3 reasons why this token is good " + tokenData
+		} else {
+			prompt = "{ mlPrediction: False }. Give 2-3 advices on how to improve this token listing chances "
+		}
 
+		const msg = await anthropic.messages.create({
+			model: "claude-3-5-sonnet-20240620",
+			max_tokens: 100,
+			temperature: 0,
+			system: "You are an AI assistant that gives advices on how to increase token listing chances on dex based on pre-trained ml prediction. I would provide you with ml prediction in such format: { mlPrediction: True/False }. If mlPrediction is True, token would be listed, otherwise - no. Return 2-3 advices on how to improve chances if token would not be listed or 2-3 reasons why token would be listed. Answer short",
+			messages: [
+				{
+					"role": "user",
+					"content": [
+						{
+							"type": "text",
+							"text": prompt
+						}
+					]
+				}
+			]
+		});
+		console.log(msg);
 
 			setAiResponse((prevState) => ({
 				...prevState,
