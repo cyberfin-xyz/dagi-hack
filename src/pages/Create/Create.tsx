@@ -398,7 +398,7 @@ const Create = () => {
 												</StyledAiAdviseHeader>
 
 
-												<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'}>
+												<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ whiteSpace: "pre-line" }}>
 													{aiResponse?.response}
 												</Paragraph>
 
