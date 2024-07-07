@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dagi-hack/static/css/main.3231a1ce.css",
-    "main.js": "/dagi-hack/static/js/main.a4ceb7af.js",
+    "main.js": "/dagi-hack/static/js/main.b3a85361.js",
     "static/media/WorkSans-Bold.ttf": "/dagi-hack/static/media/WorkSans-Bold.1cdef49100a51e35264a.ttf",
     "static/media/WorkSans-SemiBold.ttf": "/dagi-hack/static/media/WorkSans-SemiBold.6059d691b0223afc6cc5.ttf",
     "static/media/WorkSans-Medium.ttf": "/dagi-hack/static/media/WorkSans-Medium.905f58df4c3ad21ca78d.ttf",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.3231a1ce.css",
-    "static/js/main.a4ceb7af.js"
+    "static/js/main.b3a85361.js"
   ]
 }
