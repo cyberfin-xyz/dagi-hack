@@ -12,6 +12,10 @@ import PhotoUploadInput from '@components/PhotoUploadInput';
 import { ROUTES } from '../../routes';
 import { moonTokenIcon, StarsIconComp } from '@assets/images';
 
+interface AiResponseState {
+	response: string;
+}
+
 interface FormState {
 	name: string;
 	ticker: string;
@@ -26,6 +30,24 @@ interface FormState {
 interface SocialDesc {
 	title: string;
 	paramKey: keyof FormState;
+}
+
+function indexOfMax(arr) {
+	if (arr.length === 0) {
+		return -1;
+	}
+
+	var max = arr[0];
+	var maxIndex = 0;
+
+	for (var i = 1; i < arr.length; i++) {
+		if (arr[i] > max) {
+			maxIndex = i;
+			max = arr[i];
+		}
+	}
+
+	return maxIndex;
 }
 
 const Create = () => {
@@ -46,6 +68,10 @@ const Create = () => {
 		tokenImg: ''
 	});
 
+	const [aiResponse, setAiResponse] = useState<AiResponseState>({
+		response: ''
+	})
+
 	const finalSocialDescData: SocialDesc[] = [
 		{
 			title: 'Telegram channel',
@@ -65,11 +91,33 @@ const Create = () => {
 		},
 	]
 
-	const handleChange = (field: string, value: string | null) => {
+	const handleChange = async (field: string, value: string | null) => {
 		setFormState((prevState) => ({
 			...prevState,
 			[field]: value,
 		}));
+			const ai = await fetch("https://europe-west1-aiplatform.googleapis.com/v1/projects/722514934845/locations/europe-west1/endpoints/1973812487857897472:predict", {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': 'Bearer '
+				},
+				body: JSON.stringify({"instances": [{"name": formState.name, "ticker": formState.ticker, "description": formState.description}]})
+			});
+			const resp = await ai.json();
+			console.log(resp);
+			const scores = resp["predictions"][0]["scores"]
+			let prediction = false
+			if (resp["predictions"][0]["classes"][indexOfMax(scores)] == "True") {
+				prediction = true
+			}
+
+
+
+			setAiResponse((prevState) => ({
+				...prevState,
+				response: resp,
+			}));
 	};
 
 	const handleNextStep = () => {
