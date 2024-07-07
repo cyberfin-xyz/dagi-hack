@@ -228,40 +228,39 @@ const Create = () => {
 								/>
 							</StyledFormWrapper>
 
-							<StyledAiAdviseWrapper>
-								<StyledAiAdviseItem>
-									<StyledAiAdviseHeader>
-										<Paragraph
-											color={'#DAFF00'}
-											fontFamily={'WorkSans'}
-											fontSize={'14px'}
-											lineHeight={'20px'}
-											customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
-										>
-											<StarsIconComp style={{ marginRight: '4px' }} />
+							{/*<StyledAiAdviseWrapper>*/}
+							{/*	<StyledAiAdviseItem>*/}
+							{/*		<StyledAiAdviseHeader>*/}
+							{/*			<Paragraph*/}
+							{/*				color={'#DAFF00'}*/}
+							{/*				fontFamily={'WorkSans'}*/}
+							{/*				fontSize={'14px'}*/}
+							{/*				lineHeight={'20px'}*/}
+							{/*				customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}*/}
+							{/*			>*/}
+							{/*				<StarsIconComp style={{ marginRight: '4px' }} />*/}
 
-											AI Advisor
-										</Paragraph>
+							{/*				AI Advisor*/}
+							{/*			</Paragraph>*/}
 
-										<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>
-											•
-										</Paragraph>
+							{/*			<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>*/}
+							{/*				•*/}
+							{/*			</Paragraph>*/}
 
-										<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>
-											Based on experience
-										</Paragraph>
+							{/*			<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>*/}
+							{/*				Based on experience*/}
+							{/*			</Paragraph>*/}
 
-									</StyledAiAdviseHeader>
-
-
-									<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>
-										Memorable and Fun:<br />
-										The name should be catchy and easy to remember. Example: MoonCoin, #MOON
-									</Paragraph>
+							{/*		</StyledAiAdviseHeader>*/}
 
 
-								</StyledAiAdviseItem>
-							</StyledAiAdviseWrapper>
+							{/*		<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>*/}
+							{/*			{aiResponse?.response}*/}
+							{/*		</Paragraph>*/}
+
+
+							{/*	</StyledAiAdviseItem>*/}
+							{/*</StyledAiAdviseWrapper>*/}
 						</>
 							: currentStep === 'socialLinks' ? <>
 								<StyledPageHeader style={{ justifyContent: 'space-between' }}>
@@ -298,40 +297,40 @@ const Create = () => {
 									/>
 								</StyledFormWrapper>
 
-								<StyledAiAdviseWrapper>
-									<StyledAiAdviseItem>
-										<StyledAiAdviseHeader>
-											<Paragraph
-												color={'#DAFF00'}
-												fontFamily={'WorkSans'}
-												fontSize={'14px'}
-												lineHeight={'20px'}
-												customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
-											>
-												<StarsIconComp style={{ marginRight: '4px' }} />
+								{/*<StyledAiAdviseWrapper>*/}
+								{/*	<StyledAiAdviseItem>*/}
+								{/*		<StyledAiAdviseHeader>*/}
+								{/*			<Paragraph*/}
+								{/*				color={'#DAFF00'}*/}
+								{/*				fontFamily={'WorkSans'}*/}
+								{/*				fontSize={'14px'}*/}
+								{/*				lineHeight={'20px'}*/}
+								{/*				customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}*/}
+								{/*			>*/}
+								{/*				<StarsIconComp style={{ marginRight: '4px' }} />*/}
 
-												AI Advisor
-											</Paragraph>
+								{/*				AI Advisor*/}
+								{/*			</Paragraph>*/}
 
-											<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>
-												•
-											</Paragraph>
+								{/*			<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>*/}
+								{/*				•*/}
+								{/*			</Paragraph>*/}
 
-											<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>
-												Based on experience
-											</Paragraph>
+								{/*			<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>*/}
+								{/*				Based on experience*/}
+								{/*			</Paragraph>*/}
 
-										</StyledAiAdviseHeader>
-
-
-										<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>
-											Memorable and Fun:<br />
-											The name should be catchy and easy to remember. Example: MoonCoin, #MOON
-										</Paragraph>
+								{/*		</StyledAiAdviseHeader>*/}
 
 
-									</StyledAiAdviseItem>
-								</StyledAiAdviseWrapper>
+								{/*		<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'} customStyle={{ letterSpacing: '-0.14px' }}>*/}
+								{/*			Memorable and Fun:<br />*/}
+								{/*			The name should be catchy and easy to remember. Example: MoonCoin, #MOON*/}
+								{/*		</Paragraph>*/}
+
+
+								{/*	</StyledAiAdviseItem>*/}
+								{/*</StyledAiAdviseWrapper>*/}
 							</>
 								: currentStep === 'finalReview' ? <>
 									<StyledTokenPreviewWrapper>
@@ -373,6 +372,39 @@ const Create = () => {
 										}
 
 									</StyledDetailsWrapper>
+										<StyledAiAdviseWrapper style={{ marginTop: '40px'}}>
+											<StyledAiAdviseItem>
+												<StyledAiAdviseHeader>
+													<Paragraph
+														color={'#DAFF00'}
+														fontFamily={'WorkSans'}
+														fontSize={'14px'}
+														lineHeight={'20px'}
+														customStyle={{ letterSpacing: '-0.14px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
+													>
+														<StarsIconComp style={{ marginRight: '4px' }} />
+
+														AI Advisor
+													</Paragraph>
+
+													<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px', margin: '0 8px' }}>
+														•
+													</Paragraph>
+
+													<Paragraph color={'rgba(242, 242, 242, 0.5)'} fontFamily={'WorkSans-SemiBold'} fontSize={'14px'} lineHeight={'20px'} customStyle={{ letterSpacing: '-0.14px' }}>
+														Based on experience
+													</Paragraph>
+
+												</StyledAiAdviseHeader>
+
+
+												<Paragraph color={'rgba(242, 242, 242, 1)'} fontFamily={'WorkSans'} fontSize={'14px'} lineHeight={'20px'} textAlign={'start'}>
+													{aiResponse?.response}
+												</Paragraph>
+
+
+											</StyledAiAdviseItem>
+										</StyledAiAdviseWrapper>
 								</>
 									: ''
 					}
