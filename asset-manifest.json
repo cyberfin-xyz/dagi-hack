@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/dagi-hack/static/css/main.1d2f8ebe.chunk.css",
-    "main.js": "/dagi-hack/static/js/main.49b842b7.chunk.js",
-    "runtime~main.js": "/dagi-hack/static/js/runtime~main.8720d6ed.js",
-    "static/js/2.62c8c8f0.chunk.js": "/dagi-hack/static/js/2.62c8c8f0.chunk.js",
+    "main.css": "/dagi-hack/static/css/main.3231a1ce.css",
+    "main.js": "/dagi-hack/static/js/main.9b0c0d29.js",
+    "static/media/WorkSans-Bold.ttf": "/dagi-hack/static/media/WorkSans-Bold.1cdef49100a51e35264a.ttf",
+    "static/media/WorkSans-SemiBold.ttf": "/dagi-hack/static/media/WorkSans-SemiBold.6059d691b0223afc6cc5.ttf",
+    "static/media/WorkSans-Medium.ttf": "/dagi-hack/static/media/WorkSans-Medium.905f58df4c3ad21ca78d.ttf",
+    "static/media/WorkSans-Regular.ttf": "/dagi-hack/static/media/WorkSans-Regular.7c5aca8a8c320a8df026.ttf",
+    "static/media/moon-token.png": "/dagi-hack/static/media/moon-token.a2361d5f76cca8d27516.png",
+    "static/media/bobby-token.png": "/dagi-hack/static/media/bobby-token.d75db7f9d16918dc1c39.png",
+    "static/media/stars-icon.svg": "/dagi-hack/static/media/stars-icon.2fbf2ee669edcbc4492dd7e80efdff0b.svg",
+    "static/media/add-img-icon.svg": "/dagi-hack/static/media/add-img-icon.143b4a4e5cb78abd9c1813959ea7b7a9.svg",
     "index.html": "/dagi-hack/index.html",
-    "precache-manifest.24aef90801f300e2af3b4cc8f58177b7.js": "/dagi-hack/precache-manifest.24aef90801f300e2af3b4cc8f58177b7.js",
-    "service-worker.js": "/dagi-hack/service-worker.js",
-    "static/media/font-face.css": "/dagi-hack/static/media/WorkSans-SemiBold.c1b2dde1.ttf",
-    "static/media/add-img-icon.07f66a81.svg": "/dagi-hack/static/media/add-img-icon.07f66a81.svg",
-    "static/media/bobby-token.png": "/dagi-hack/static/media/bobby-token.17363a0b.png",
-    "static/media/loader.2ffef1e8.svg": "/dagi-hack/static/media/loader.2ffef1e8.svg",
-    "static/media/moon-token.png": "/dagi-hack/static/media/moon-token.bed3d5f8.png",
-    "static/media/plus-icon.6f30807e.svg": "/dagi-hack/static/media/plus-icon.6f30807e.svg",
-    "static/media/search-icon.65f1690f.svg": "/dagi-hack/static/media/search-icon.65f1690f.svg",
-    "static/media/stars-icon.acd98293.svg": "/dagi-hack/static/media/stars-icon.acd98293.svg"
-  }
+    "static/media/loader.svg": "/dagi-hack/static/media/loader.870a85aac0f1a54a73e58277733bcc9d.svg",
+    "static/media/search-icon.svg": "/dagi-hack/static/media/search-icon.81e48cc3f81e3e468062bba006f3cf4f.svg",
+    "static/media/plus-icon.svg": "/dagi-hack/static/media/plus-icon.bf129847f7c0631296af34505f185a43.svg"
+  },
+  "entrypoints": [
+    "static/css/main.3231a1ce.css",
+    "static/js/main.9b0c0d29.js"
+  ]
 }
